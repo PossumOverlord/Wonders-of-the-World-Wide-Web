@@ -9,14 +9,7 @@
     <script src="lib/p5.js"></script>
 </head>
 <body>
-    <% data.forEach(function (post) { %>
-        <% if(post.img != ''){ %>
-        <img src="<%= post.img %>">
-        <% } %> 
-        <%= post.title %>
-        <%= post.date %>
-        <p><%= post.y %></p>
-<% }) %>
-<script src="sketch.js"></script>
+<div id="query"></div>
+<script src="/assets/scripts/sketch.js"></script>
 </body>
 </html>
