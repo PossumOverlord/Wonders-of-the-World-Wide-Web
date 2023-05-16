@@ -6,8 +6,11 @@ const path = require('path');
 app.use(express.static(path.resolve('./public')));
 
 app.get('/', function(req,res){
-    res.render('index')
- });
+  res.render('index')
+});
+app.post('/', function(req,res){
+  res.render('index')
+});
 
 
 const Test = require('./mongo/write');
@@ -45,14 +48,16 @@ async function save(obj){
 
 app.get('/a', async function(res,req){
   try {
-    console.log('root');
-  const addTest = new Test({
-    cool: "cool!",
+    const db = client.db("chungus1");
+    const collection = db.collection("wideWeb")
+    console.log("connected to mongodb");
+    second = await collection. insertOne({ cool: "cool!",
     superCool: "not",
     notCool: "still cool"
   });
-  console.log('addTe');
-  save(addTest);
+
+  //gör om till global variabel 
+  console.log(second)
   
   //res.render('index');
   } catch(err){

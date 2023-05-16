@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Foldit:wght@500&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    user-select: none;
+  }
+  html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  body {
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    transition: 3s;
+  }
+  h {
+    position: absolute;
+    text-align: center;
+  }
+  .webpageName {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;;
+    color: purple;
+    font-size: 5vh;
+    margin-left: 50%; 
+    top: 5%;
+    transform: translate(-50%, -50%);
+  }
+  .slogan {
+    font-family: "foldit";
+    transform: rotate(23deg);
+    color: purple;
+    font-size:calc(1vw);
+    margin-left: 20vw; 
+    top: 15vh;
+    min-width: 200px;
+  }
+  .question, #start, #logIn {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color: white;
+    margin-left: 50%; 
+    word-break: keep-all;
+    cursor: pointer;
+    overflow: none;
+    white-space: nowrap;
+  }
+  #query1 {
+    margin-top: 15%;
+    font-size: 2.8vh;
+  }
+  #query2 {
+    margin-top: 10%;
+    opacity: 38%;
+    font-size: 2.5vh;
+  }
+  #query3 {
+    margin-top: 5%;
+    opacity: 30%;
+    font-size: 2.2vh;
+  }
+  #queryQuick {
+    margin-top: 10%;
+    margin-left: 65%;
+    font-size: 2.8vh;
+    transform: rotate(23deg);
+  }
+  #start, #logIn {
+    color: purple;
+    margin-top: 20%;
+    font-size: 2.8vh;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+  }
+  #logIn {
+    margin-top: 18%;
+  }
+  img {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    margin-left: 85vw;
+    margin-top: 15%;
+    height: 20vw;
+  }
+  #fLevel, #gMeter, #sBarometer {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color: white;
+    margin-left: 15%;
+    margin-top: 5%;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+  }
+  #gMeter {
+    margin-top: 10%;
+  }
+  #sBarometer {
+    margin-top: 15%;
+  }
+ /* #voice5 {
+    color: red;
+  }
+  #voice7 {
+    color: yellow;
+  }*/
+  
+  #captcha {
+    transform: translate(-50%, -50%);
+    margin-left: 52%; 
+    margin-top: 21.5%;
+    position: absolute;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 0.5vh;
+  }
+  .speech {
+    transform: translate(-50%, -50%);
+    margin-left: 50%; 
+    margin-top: 20%;
+    position: absolute;
+    text-align: center;
+    color: white;
+  }
+  .speak {
+    transform: translate(-50%, -50%);
+    margin-left: 60%; 
+    margin-top: 20%;
+    position: absolute;
+    text-align: center;
+    color: white;
+    display: none;
+    padding: 0.5%;
+    background-color: darkslategray;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  /*#blocker {
+    position: absolute;
+    color: black;
+    z-index: 2;
+  }*/

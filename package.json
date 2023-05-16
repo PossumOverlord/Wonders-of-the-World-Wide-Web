@@ -1,7 +1,7 @@
 {
   "name": "worldwidewebwidewebdesign",
   "version": "1.0.0",
-  "description": "",
+  "description": "Försökt importera p5.js\r Nästa gång kommer jag importera p5.js korrekt\r Jag ska använda image recognition med häjlp av p5.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,6 +14,8 @@
     "body-parser": "^1.20.1",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
+    "jquery": "^3.6.4",
+    "jsdom": "^21.1.1",
     "mongodb": "^5.1.0",
     "mongoose": "^7.0.3",
     "multer": "^1.4.5-lts.1",
@@ -21,5 +23,16 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PossumOverlord/Wonders-of-the-World-Wide-Web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PossumOverlord/Wonders-of-the-World-Wide-Web/issues"
+  },
+  "homepage": "https://github.com/PossumOverlord/Wonders-of-the-World-Wide-Web#readme"
 }
