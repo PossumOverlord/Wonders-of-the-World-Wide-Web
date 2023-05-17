@@ -25,6 +25,7 @@ $(function () {
         $("#start").on('click', function () {
             if (start == true) {
                 $("#start").fadeOut(1700)
+                $("#logIn").fadeOut(1700)
                 $("body").css("backgroundColor", 'black')
                 $(".question").fadeIn(1700);
                 $("#query1").text("");
@@ -342,8 +343,8 @@ $(".speak").on('click', function () {
 
 
 
-        else if (condition('suspitiouspossum','suspitiousopossum','possumsuspitious','opossumsuspitious')&& part == 2) {
-            $("#queryQuick").html(makeSpan("Be more specific"))
+        else if (condition('suspiciouspossum','suspiciousopossum','possumsuspicious','opossumsuspicious')&& part == 2) {
+            $("#queryQuick").html(makeSpan("You're damn right"))
             sessionStorage.setItem("questionAvailable", true);
             setTimeout(function(){
             $("#queryQuick").html("")
