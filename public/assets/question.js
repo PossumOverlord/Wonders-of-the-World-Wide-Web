@@ -527,12 +527,7 @@ function test(string){
     $('.speech').prepend(' ');
     $('.speech').prepend(userVoice[userVoice.length - 2]);
 }
-/*$("html").on('mouseleave', function () {
-    
-})
-$("html").on('mouseenter', function () {
 
-})*/
 function condition(string, string1, string2, string3, string4, string5) {
     let condi = string
     let condi1 = string1
