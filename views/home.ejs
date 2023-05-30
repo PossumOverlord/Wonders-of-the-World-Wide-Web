@@ -14,15 +14,21 @@
 <body>
 <h class="webpageName">Wonders of the World Wide Web</h>
 <h class="slogan">World Wide Web Wide Webpage!</h>
+<% if (typeof(session) != "string") { %>
+<a id="register" href="/register">Sign up (for real this time)</a>
+<a id="logIn" href="/login">Log in?</a>
 <div id="start">Sign up!</div>
-<btn id="logIn">Log in?</btn>
+<div id="captcha">Captcha All Humans™</div>
+<% } else {%>
+<a id="logout" href="/logout">Logout</a>
+<div id="welcome">Hahaha welcome, you can do whatever you want now!</div>
+    <% } %>
 <div class="question" id="query1"></div>
 <div class="question" id="query2"></div>
 <div  class="question" id="query3"></div>
 <div class="question" id="queryQuick"></div>
 <div class="speech"></div>
 <btn class="speak">talk</btn>
-<div id="captcha">Captcha All Humans™</div>
 <div id="fLevel"></div>
 <div id="gMeter"></div>
 <div id="sBarometer"></div>

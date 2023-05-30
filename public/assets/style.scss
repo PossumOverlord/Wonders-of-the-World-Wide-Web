@@ -33,12 +33,13 @@
     transform: translate(-50%, -50%);
   }
   .slogan {
+    position: absolute;
     font-family: "foldit";
-    transform: rotate(23deg);
+    transform: rotate(23deg) translate(-50%, -50%);
     color: purple;
-    font-size:calc(1vw);
-    margin-left: 20vw; 
-    top: 15vh;
+    font-size: 1vw;
+    margin-left: 28.5vw; 
+    top: 20vh;
     min-width: 200px;
   }
   .question, #start, #logIn {
@@ -71,14 +72,27 @@
     font-size: 2.8vh;
     transform: rotate(23deg);
   }
-  #start, #logIn {
+  #start, #logIn, #register, #welcome {
+    position: absolute;
     color: purple;
     margin-top: 20%;
     font-size: 2.8vh;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
+    text-decoration: none;
   }
   #logIn {
     margin-top: 18%;
+  }
+  #register, #welcome {
+    transform: translate(-50%, -50%);
+    margin-left: 50%;
+    &#register {
+      display: none;
+    }
+  }
+  #logout {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    text-decoration: none;
   }
   img {
     transform: translate(-50%, -50%);
@@ -137,6 +151,13 @@
     border-radius: 100%;
     cursor: pointer;
   }
+h1 {
+  font-family: "foldit";
+  font-size: 3vh;
+}
+
+
+
   /*#blocker {
     position: absolute;
     color: black;

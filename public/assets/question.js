@@ -606,7 +606,7 @@ function stageSetter(decider, number) {
         currentQ = "But first!!We must verify that you are NOT human!!You may anwser:!!'Yes' or 'No'";
     }
     else if (part === 2) {
-        currentQ = "Alright "+playerName+", what animal is the Beast?!!Whale?!!Possum?!!Or!!Opossum?"
+        currentQ = "Alright "+playerName+", what animal isn't the Beast?!!Whale?!!Possum?!!Or!!Opossum?"
         $("img").animate({marginLeft: '50%', marginTop: '130%', transition: '0s'});
         $("img").animate({marginTop: '35%', transition: '1s'});
         $("img").animate({transition: '0s'});
@@ -620,7 +620,7 @@ function stageSetter(decider, number) {
         $(".webpageName").animate({top: '5%'},1700);
         $(".slogan").animate({top: ''},1700);
         $(".speak").fadeOut(1700);
-        $("#logIn").fadein(3000);
+        $("#register").fadeIn(3000);
         }, 2000)
         return
 
