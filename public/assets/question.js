@@ -16,7 +16,6 @@ let check1 = 1;
 let response = "";
 
 $(function () {
-    console.log(sessionStorage.getItem("questionAvailable"));
     if (sessionStorage.getItem("questionAvailable") == true) {
         reset();
     }
@@ -51,10 +50,9 @@ $(".speak").on('click', function () {
     anwser.split(' ').forEach(t => {
         anwser = anwser.replace(' ', '')
     })
-    console.log(sessionStorage.getItem("questionAvailable"));
     if (sessionStorage.getItem("questionAvailable") == "true") {
         sessionStorage.setItem("questionAvailable", false);
-        console.log("AHHHHH");
+
 
 
         if (condition("yes","yesyes","notnot")) {                                   //CONDITIONS!!!
@@ -79,7 +77,6 @@ $(".speak").on('click', function () {
 
 
         else if (condition('no', 'nono', 'not')) {
-            console.log("working 2");
             if (part == 1) {
             $("#query1").html(multiSpeech(makeSpan("no?!!I hope for your sake...!! That you are not a liar"), 1700));
             setTimeout(function(){
@@ -102,7 +99,7 @@ $(".speak").on('click', function () {
         else if (condition('TheGraciousHost')) {
             if (part == 1) {
                 gullibleMeter = gullibleMeter + 1;
-                $("#query1").html(multiSpeech(makeSpan("Why yes? That'd be me!!But i am not always so...!!Gracious...!!Human or not?"), 1700));
+                $("#query1").html(multiSpeech(makeSpan("Why yes? That'd be me!!But I am not always so...!!Gracious...!!Human or not?"), 1700));
                 }
         }
 
@@ -129,7 +126,6 @@ $(".speak").on('click', function () {
 
         else if (condition('mayor')) {
             if (playerName == "human") {
-                console.log("working 5");
                 $("#query1").html(multiSpeech(makeSpan("...?!!You're a mayor?!!Then you are human, no?"), 1700));
                 playerName = "Mayor";
                 gullibleMeter = gullibleMeter + 1;
@@ -144,7 +140,6 @@ $(".speak").on('click', function () {
 
         else if (condition('noor')) {
             if (part == 1) {
-                console.log("working 5");
                 $("#query1").html(multiSpeech(makeSpan("... You're neither?!!Well...!!We will see about that"), 1700));
                 setTimeout(function(){
                     stageSetter(2,1700);
@@ -186,7 +181,6 @@ $(".speak").on('click', function () {
 
         else if (condition('your','notyour','thats')) {
             if (part == 1 && playerName == "human") {
-                console.log("working 6");
                 let temp2 = "";
                 if (condition('thats')) {
                     temp2 = "THAT'S";
@@ -200,7 +194,6 @@ $(".speak").on('click', function () {
                 }
                 
             else if (part == 1 && playerName == "Mayor") {
-                console.log("working 6");
                 $("#query1").html(multiSpeech(makeSpan("Ohh...!!'you're' right!!Thank... you... Mr Mayor :)"), 1700));
                 let part = 1;;
                 sessionStorage.setItem("", false);
@@ -372,7 +365,6 @@ $(".speak").on('click', function () {
 
         else {
             if (part == 1) { 
-                console.log("no conditions apply! 1");
                 suspicionBarometer = suspicionBarometer + 1;
                 if (suspicionBarometer > 4) {
                     $("#query1").html(makeSpan("Enough! You are without a doubt human"))
@@ -394,7 +386,6 @@ $(".speak").on('click', function () {
                 }
             }
             else if (part == 2) {
-                console.log("no conditions apply! 2")
                 suspicionBarometer = suspicionBarometer + 1;
                 if (suspicionBarometer > 4) {
                     $("#query1").html(makeSpan("Enough! You are without a doubt human"))
@@ -414,7 +405,6 @@ $(".speak").on('click', function () {
                 }
             }
             else if (part == 3) {
-            console.log("no conditions apply! 3")
             sessionStorage.setItem("questionAvailable", true);
             }
         }
@@ -444,20 +434,6 @@ function makeSpan(string){
     return spanString;
 }
 
-function findSpan(){
-    let playerSpeech = "";
-    /*$("span").on('click', function () {
-        let word = $(this).text();
-        playerSpeech = "";
-        //console.log(word);
-        let temp1 = word.split('?');
-        temp1.forEach(t => {
-            playerSpeech += '<span onclick="test('+ t +')" id="playerSpeech'+sessionStorage.getItem("nextQuestion")+'">' + t + ' </span>'
-        });
-        //playerSpeech = $(playerSpeech).text()
-        console.log(word);
-    });*/
-}
 function multiSpeech(string, ms){
     let sentence = [];
     let speechId = 0;
@@ -479,7 +455,6 @@ function multiSpeech(string, ms){
     $("#query2").html(firstSentence);
     $("#query3").html(secondSentence);
     speechId = sentence.length - 1;
-    console.log(speechId);
     intervalID = setInterval(function () {
         if (tick === 0) {
             $("#query3").html(firstSentence)
@@ -490,22 +465,17 @@ function multiSpeech(string, ms){
             firstSentence = sentence[tick];
             secondSentence = sentence[tick - 1]
             userVoice = []
-            console.log(tick);
-            console.log(speechId);
-            console.log(speechId === tick)
             clearInterval(intervalID)
         }
             $("#query1").html(sentence[tick]);
             $("#query2").html(sentence[tick - 1]);
             $("#query3").html(sentence[tick - 2]);
-            console.log("what is this");
     }, ms);
 }
 
 
 
 function test(string){
-    console.log(string);
     string = string.innerText.replace('?', '')
     string = string.replace('!', '')
     string = string.replace('...', '')
@@ -545,7 +515,6 @@ function test(string){
     string = string.replace('B', 'b')
     string = string.replace('N', 'n')
     string = string.replace('M', 'm')
-    console.log(string)
     if (string == "[647ek33p3r]") {
         string = "The Gracious Host"
     }
@@ -554,7 +523,6 @@ function test(string){
         userVoice.shift()
     }
     sessionStorage.setItem('storeVoice', userVoice);
-    console.log(sessionStorage.getItem('storeVoice'));
     $('.speech').text(userVoice[userVoice.length - 1]);
     $('.speech').prepend(' ');
     $('.speech').prepend(userVoice[userVoice.length - 2]);
@@ -573,31 +541,32 @@ function condition(string, string1, string2, string3, string4, string5) {
     let condi4 = string4
     let condi5 = string5
     if (typeof condi == typeof "string" && typeof condi1 == typeof "string" && typeof condi2 == typeof "string" && typeof condi2 == typeof "string" && typeof condi3 == typeof "string" && typeof condi4 == typeof "string" && typeof condi5 == typeof "string") {
-        console.log(typeof condi);
+        
         return anwser == condi || anwser == condi1 || anwser == condi2 || anwser == condi3 || anwser == condi4 || anwser == condi5
     }
     else if (typeof condi == typeof "string" && typeof condi1 == typeof "string" && typeof condi2 == typeof "string" && typeof condi2 == typeof "string" && typeof condi3 == typeof "string" && typeof condi4 == typeof "string") {
-        console.log(typeof condi);
+        
         return anwser == condi || anwser == condi1 || anwser == condi2 || anwser == condi3 || anwser == condi4
     }
     else if (typeof condi == typeof "string" && typeof condi1 == typeof "string" && typeof condi2 == typeof "string" && typeof condi2 == typeof "string" && typeof condi3 == typeof "string" ) {
-        console.log(typeof condi);
+        
         return anwser == condi || anwser == condi1 || anwser == condi2 || anwser == condi3
     }
     else if (typeof condi == typeof "string" && typeof condi1 == typeof "string" && typeof condi2 == typeof "string") {
-    console.log(typeof condi);
+    
     return anwser == condi || anwser == condi1 || anwser == condi2
     }
     else if (typeof condi == typeof "string" && typeof condi1 == typeof "string") {
-    console.log(typeof condi);
+    
     return anwser == condi || anwser == condi1
     }
     else if (typeof condi == typeof "string") {
-    console.log(typeof condi);
+    
     return anwser == condi
     }
 }                                                                    //PART MAKER
 function stageSetter(decider, number) {
+    sessionStorage.setItem("questionAvailable", false)
     part = decider;
     let increase = 0;
 
@@ -608,7 +577,7 @@ function stageSetter(decider, number) {
     else if (part === 2) {
         currentQ = "Alright "+playerName+", what animal isn't the Beast?!!Whale?!!Possum?!!Or!!Opossum?"
         $("img").animate({marginLeft: '50%', marginTop: '130%', transition: '0s'});
-        $("img").animate({marginTop: '35%', transition: '1s'});
+        $("img").animate({marginTop: '70vh', transition: '1s'});
         $("img").animate({transition: '0s'});
     }
     else if (part === 3) {
@@ -618,7 +587,7 @@ function stageSetter(decider, number) {
         $("body").css("backgroundColor", 'yellow');
         $(".question").fadeOut(1700);
         $(".webpageName").animate({top: '5%'},1700);
-        $(".slogan").animate({top: ''},1700);
+        $(".slogan").animate({top: '300%'},1700);
         $(".speak").fadeOut(1700);
         $("#register").fadeIn(3000);
         }, 2000)
@@ -626,7 +595,7 @@ function stageSetter(decider, number) {
 
     }
     else if (part === 4) {
-        
+        //potential new path
     }
     else if (part === 5) {
         $("img").fadeOut(1700)
@@ -741,7 +710,6 @@ $(function () {
             $(".speak").on('click', function () {
         if (suspicionBarometer == 5 && gullibleMeter == 4 && frustrationLevel == 5) {
             let check = 1;
-            console.log("workssssssss")
             $("#sBarometer").fadeIn(1200);
             $("#sBarometer").text("Suspicion Barometer: ???")
             $("body").css("color", "darkblue")
@@ -793,11 +761,12 @@ $(function () {
 intervalID2 = setInterval(function () {
       if (upDown == true) {
         upDown = false;
-        $(".slogan").animate({fontSize: "1vw"},700)
+        $('.slogan').css("font-size","calc(9px + 0.9vw)");
+
       }
       else {
         upDown = true;
-        $(".slogan").animate({fontSize: "1.5vw"},700)
+        $('.slogan').css("font-size","calc(7px + 0.7vw)");
       }
 }, 700)
 

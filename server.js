@@ -94,35 +94,6 @@ async function run() {
 }
 run().catch(console.error);
 
-async function save(obj){
-  console.log(obj);
-  /*
-  addTest.save().then(function(){
-    console.log('saved');
-  })
-  */
-}
-
-app.get('/a', async function(res,req){
-  try {
-    const db = client.db("chungus1");
-    const collection = db.collection("wideWeb")
-    console.log("connected to mongodb");
-    second = await collection. insertOne({ cool: "cool!",
-    superCool: "not",
-    notCool: "still cool"
-  });
-
-  //gör om till global variabel 
-  console.log(second)
-  
-  //res.render('index');
-  } catch(err){
-    console.log(err);
-  }
-
-});
-
 app.listen(process.env.PORT || 3000, function(){
     console.log('server, port 3000');
  });
